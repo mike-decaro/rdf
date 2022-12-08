@@ -32,46 +32,22 @@ using TrinityExample;
 
 namespace FirstSteps
 {
-    /// <summary>
-    /// A person (alive, dead, undead, or fictional).
-    /// </summary>
     [RdfClass(SCHEMA.Person)]
     public class Person : Thing
     {
-        #region Members
-
-        /// <summary>
-        /// Given name. In the U.S., the first name of a Person. This can be used along 
-        /// with familyName instead of the name property.
-        /// </summary>
         [RdfProperty(SCHEMA.givenName), NotifyPropertyChanged]
         public string FirstName { get; set; }
 
-        /// <summary>
-        /// Family name. In the U.S., the last name of an Person. This can be used along 
-        /// with givenName instead of the name property.
-        /// </summary>
         [RdfProperty(SCHEMA.familyName), NotifyPropertyChanged]
         public string LastName { get; set; }
 
-        /// <summary>
-        /// Date of birth.
-        /// </summary>
         [RdfProperty(SCHEMA.birthDate)]
         public DateTime BirthDate { get; set; }
 
-        /// <summary>
-        /// The most generic bi-directional social/work relation.
-        /// </summary>
         [RdfProperty(SCHEMA.knows)]
         public ObservableCollection<Person> KnownPersons { get; set; }
 
-        #endregion
+        public Person(Uri uri) : base(uri) { }
 
-        #region Constructors
-
-        public Person(Uri uri) : base(uri) {}
-
-        #endregion
     }
 }

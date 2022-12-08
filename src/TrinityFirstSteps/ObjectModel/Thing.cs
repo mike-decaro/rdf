@@ -31,17 +31,11 @@ using TrinityExample;
 
 namespace FirstSteps
 {
-    /// <summary>
-    /// The most generic type of item.
-    /// </summary>
     [RdfClass(SCHEMA.Thing)]
     public class Thing : Resource
     {
         #region Members
 
-        /// <summary>
-        /// The name of the item.
-        /// </summary>
         [RdfProperty(SCHEMA.name)]
         public string Name { get; set; }
 

@@ -35,9 +35,7 @@ namespace FirstSteps
 {
     class Program
     {
-        /// <summary>
         /// The model we are working on
-        /// </summary>
         static IModel Model { get; set; }
 
         static void Main()
@@ -72,7 +70,7 @@ namespace FirstSteps
             alice2.Commit();
             john2.Commit();
 
-            var theDoeFamily = from person in Model.AsQueryable<Person>() where person.LastName.StartsWith("d", StringComparison.InvariantCultureIgnoreCase) select person;
+            var theDoeFamily = from person in Model.AsQueryable<Person>() where person.LastName.StartsWith("doe", StringComparison.InvariantCultureIgnoreCase) select person;
             foreach (var p in theDoeFamily)
                 Console.WriteLine($"Name: {p.FirstName} {p.LastName} Birthdate: {p.BirthDate}");
 
