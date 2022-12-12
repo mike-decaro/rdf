@@ -82,8 +82,8 @@ john.BirthDate = new DateTime(2010, 1, 1);
 john.Commit();
 ```
 
-We do similarly for an "Alice" resource of type Person as well.  We also make an "Alice2" and a "John2" resource with
-no information about them other than that they know each other.
+We do similarly for an "Alice" resource of type Person as well.  We also make an "Alice2" and a "John2" variables with
+that creates a "knows person" relationship between "Alice" and "John".
 
 To access the resources directly, we call the `Model.GetResource()` method.
 If you know the response structure, we can provide a type in the place.  If we omit the type, it will return the object,
